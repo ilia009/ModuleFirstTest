@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -50,15 +51,22 @@ public class Shop {
 
     //will rewrite in stream!
     public Bill getBillForUser(User user){
-        Bill bill = new Bill();
-        Busket busket = new Busket(goods);
+//        Bill bill = new Bill();
+//        Busket busket = new Busket(goods);
+//
+//        bill.setUserName(user.getName());
+//        bill.setUserAddress(user.getAddress());
+//        bill.setGoods(getBusketForUser(user).getGoods());
+//        bill.setTotalPrice(busket.getTotalPrice());
+//
+//        return bill;
 
-        bill.setUserName(user.getName());
-        bill.setUserAddress(user.getAddress());
-        bill.setGoods(getBusketForUser(user).getGoods());
-        bill.setTotalPrice(busket.getTotalPrice());
+        return  getBusketForUser(user).getGoods()
+                .stream()
+                .map(bill -> new Bill(user.getName(),user.getAddress(),goods, getBusketForUser(user).getTotalPrice()))
+                .collect(Collectors.toList()).get(0);
 
-        return bill;
+
     }
 
     //may I write in JSON format?

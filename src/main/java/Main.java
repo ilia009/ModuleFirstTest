@@ -46,7 +46,7 @@ public class Main {
         System.out.println("The busket for user: " + shop.getBusketForUser(user1));
 
         //clone busket
-        Busket newBusket = busket.copyBusket();
+//        Busket newBusket = busket.copyBusket();
 
         //remove expencive goods from goods
         busket.removeExpenciveGods(100);
@@ -65,7 +65,7 @@ public class Main {
         System.out.println("User with active busket " + shop.getUsersWithBusket());
 
         //get bill for user
-        shop.getBillForUser(user1);
+        System.out.println(shop.getBillForUser(user1));
 
 
     }
