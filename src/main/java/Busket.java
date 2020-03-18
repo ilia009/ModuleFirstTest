@@ -39,7 +39,6 @@ public class Busket {
         goods.removeIf(good -> good.getPrice().doubleValue()>price);
     }
 
-
     public List<Good> getGoods() {
         return goods;
     }
@@ -48,7 +47,6 @@ public class Busket {
         this.goods = goods;
         return this;
     }
-
 
     @Override
     public String toString() {

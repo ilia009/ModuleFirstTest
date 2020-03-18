@@ -5,7 +5,6 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-
         Good banana = new Good("Banana", 01, "", BigDecimal.valueOf(33.0));
         Good monitor = new Good("Monitor", 02, "desc2", BigDecimal.valueOf(90.0));
         Good rabbit = new Good("Rabbit", 03, "", BigDecimal.valueOf(190.0));
@@ -37,27 +36,34 @@ public class Main {
         shop.setUsers(users);
         shop.setGoods(goods);
 
-
         // get VIP users
         System.out.println("The VIP users: " + shop.getVipUsers());
+
         //create busketForUser
         shop.createBusketForUser(user1);
+
         //get busketForUser
         System.out.println("The busket for user: " + shop.getBusketForUser(user1));
-        //clone busket
 
+        //clone busket
         Busket newBusket = busket.copyBusket();
+
         //remove expencive goods from goods
         busket.removeExpenciveGods(100);
+
         //get goods by filters
-        System.out.println("Filtering goods + " + shop.getGoodsByTitleAndPrice("Apple", 11.0));
+        System.out.println("Filtering goods + " + shop.getGoodsByTitleAndPrice("Banana", 1111.0));
+
         //write bill to file
         Bill bill = new Bill();
         shop.writeBillToFile(bill);
+
         //getTotalPrice
-        System.out.println("Total price" + busket.getTotalPrice());
+        System.out.println("Total price " + busket.getTotalPrice());
+
         //get user with busket
         System.out.println("User with active busket " + shop.getUsersWithBusket());
+
         //get bill for user
         shop.getBillForUser(user1);
 

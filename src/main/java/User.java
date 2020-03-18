@@ -16,16 +16,9 @@ public class User {
         return name;
     }
 
-
     public String getAddress() {
         return address;
     }
-
-
-    public String getEmailAdress() {
-        return emailAdress;
-    }
-
 
     public Status getVipStatus() {
         return vipStatus;
@@ -39,10 +32,6 @@ public class User {
 
         Status(String status) {
             this.status = status;
-        }
-
-        public String getStatus() {
-            return status;
         }
     }
 
