@@ -65,7 +65,7 @@ public class Main {
         System.out.println("User with active busket " + shop.getUsersWithBusket());
 
         //get bill for user
-        System.out.println(shop.getBillForUser(user1));
+        System.out.println("Bill work " + shop.getBillForUser(user1));
 
 
     }

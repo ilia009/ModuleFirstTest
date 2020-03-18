@@ -51,15 +51,6 @@ public class Shop {
 
     //will rewrite in stream!
     public Bill getBillForUser(User user){
-//        Bill bill = new Bill();
-//        Busket busket = new Busket(goods);
-//
-//        bill.setUserName(user.getName());
-//        bill.setUserAddress(user.getAddress());
-//        bill.setGoods(getBusketForUser(user).getGoods());
-//        bill.setTotalPrice(busket.getTotalPrice());
-//
-//        return bill;
 
         return  getBusketForUser(user).getGoods()
                 .stream()
