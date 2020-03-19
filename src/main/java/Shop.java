@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.math.BigDecimal;
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
 
 public class Shop {
@@ -25,7 +26,7 @@ public class Shop {
 
     public void createBusketForUser(User user) {
 
-        Busket busket = new Busket(goods);
+        Busket busket = new Busket((CopyOnWriteArrayList<Good>) goods);
         if (user!= null && !activeBuskets.containsKey(user)) {
             activeBuskets.put(user, busket);
         } else

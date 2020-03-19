@@ -1,6 +1,7 @@
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,7 +21,7 @@ public class Main {
         users.add(user2);
         users.add(user3);
 
-        List<Good> goods = new ArrayList<>();
+        CopyOnWriteArrayList<Good> goods = new CopyOnWriteArrayList<>();
         goods.add(banana);
         goods.add(monitor);
         goods.add(rabbit);
@@ -46,7 +47,7 @@ public class Main {
         System.out.println("The busket for user: " + shop.getBusketForUser(user1));
 
         //clone busket
-//        Busket newBusket = busket.copyBusket();
+        Busket newBusket = busket.copyBusket();
 
         //remove expencive goods from goods
         busket.removeExpenciveGods(100);

@@ -1,15 +1,12 @@
 import java.math.BigDecimal;
-import java.util.List;
+import java.util.Iterator;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Busket {
 
-    private List<Good> goods;
+    private CopyOnWriteArrayList<Good> goods;
 
-    public Busket(){
-
-    }
-
-    public Busket(List<Good> goods) {
+    public Busket(CopyOnWriteArrayList<Good> goods) {
         this.goods = goods;
 
     }
@@ -27,9 +24,13 @@ public class Busket {
 
     public Busket copyBusket(){
 
-        Busket busketCloned = new Busket();
+        Busket busketCloned = new Busket(goods);
         for (Good good: this.getGoods()){
             busketCloned.getGoods().add(good.clone());
+        }
+        System.out.println("Cloned goods: ");
+        for (Good good: busketCloned.getGoods()){
+            System.out.print(good +" ");;
         }
 
         return busketCloned;
@@ -39,11 +40,11 @@ public class Busket {
         goods.removeIf(good -> good.getPrice().doubleValue()>price);
     }
 
-    public List<Good> getGoods() {
+    public CopyOnWriteArrayList<Good> getGoods() {
         return goods;
     }
 
-    public Busket setGoods(List<Good> goods) {
+    public Busket setGoods(CopyOnWriteArrayList<Good> goods) {
         this.goods = goods;
         return this;
     }
